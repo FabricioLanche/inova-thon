@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>PredIA · ViableVIS</title>
+  <title>PredIA</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
@@ -28,19 +28,19 @@
       <div class="spacer"></div>
       <div class="help">
         <p>¿Necesitas ayuda? Nuestro equipo te apoya.</p>
-        <button class="btn">Contactar</button>
+        <button class="btn" data-toast="El equipo de soporte te contactará por email" data-toast-type="">Contactar</button>
       </div>
     </aside>
 
     <main class="main">
       <header class="topbar">
         <div class="product">
-          <b>ViableVIS</b>
+          <b>PredIA</b>
           <em id="subtitle">Analítica de predios y viabilidad de proyectos</em>
         </div>
-        <div class="search">Buscar terrenos, distritos, propietarios…</div>
+        <input class="search" id="search" placeholder="Buscar terrenos, distritos, propietarios…" />
         <div class="user">
-          <div class="avatar">JP</div>
+          <div class="avatar" data-toast="Usuario de demostración · Carla, analista de desarrollo">JP</div>
           <div>
             <b>Juan Pérez</b><br />
             <span class="tiny">Empresa XYZ</span>
@@ -77,16 +77,16 @@
               <p class="sub">Explora oportunidades de propietarios, brokers, portales y cartera interna en un solo lugar.</p>
             </div>
             <div class="actions">
-              <button class="btn ghost">Importar oportunidades</button>
-              <button class="btn">Agregar terreno +</button>
+              <button class="btn ghost" data-toast="Simulación: importando 3 terrenos desde fuentes externas…">Importar oportunidades</button>
+              <button class="btn" data-toast="Demo: formulario de registro de terreno prepoblado">Agregar terreno +</button>
               <button class="btn ghost" data-view="comparar">Ver candidatos</button>
             </div>
           </div>
           <div class="sources">
-            <div class="card source purple"><div class="n">48</div>Propietarios</div>
-            <div class="card source blue"><div class="n">32</div>Brokers</div>
-            <div class="card source green"><div class="n">78</div>Portales inmobiliarios</div>
-            <div class="card source gold"><div class="n">26</div>Cartera interna</div>
+            <div class="card source purple" data-toast="Filtrando fuente: Propietarios (48)"><div class="n">48</div>Propietarios</div>
+            <div class="card source blue" data-toast="Filtrando fuente: Brokers (32)"><div class="n">32</div>Brokers</div>
+            <div class="card source green" data-toast="Filtrando fuente: Portales inmobiliarios (78)"><div class="n">78</div>Portales inmobiliarios</div>
+            <div class="card source gold" data-toast="Filtrando fuente: Cartera interna (26)"><div class="n">26</div>Cartera interna</div>
           </div>
           <div class="stats-line">
             <span><b>128</b> oportunidades totales</span>
@@ -102,11 +102,11 @@
               <div class="field"><label>Producto</label><select><option>Vivienda social</option></select></div>
               <div class="field"><label>Rango de precio (S/)</label><input placeholder="Mínimo" /><input placeholder="Máximo" style="margin-top:6px" /></div>
               <div class="tiny">Fuente de oportunidad</div>
-              <label class="check"><input type="checkbox" checked /> Propietarios</label>
-              <label class="check"><input type="checkbox" checked /> Brokers</label>
-              <label class="check"><input type="checkbox" checked /> Portales</label>
-              <label class="check"><input type="checkbox" checked /> Cartera interna</label>
-              <button class="btn" style="width:100%;margin-top:10px">Buscar terrenos</button>
+              <label class="check"><input type="checkbox" class="source-filter" data-source="propietario" checked /> Propietarios</label>
+              <label class="check"><input type="checkbox" class="source-filter" data-source="brokers" checked /> Brokers</label>
+              <label class="check"><input type="checkbox" class="source-filter" data-source="portales" checked /> Portales</label>
+              <label class="check"><input type="checkbox" class="source-filter" data-source="interna" checked /> Cartera interna</label>
+              <button class="btn" style="width:100%;margin-top:10px" data-toast="38 terrenos coinciden con los filtros">Buscar terrenos</button>
             </aside>
             <div class="map">
               <div class="map-label" style="top:18%;left:42%">Comas</div>
@@ -116,8 +116,8 @@
               <div class="map-pin g" style="top:28%;left:55%"></div>
             </div>
             <div class="list">
-              <div class="tiny" style="margin-bottom:8px">Terrenos encontrados (128) · Mayor potencial</div>
-              <article class="lot sel" data-view="urbanistico">
+              <div class="tiny" data-lot-count style="margin-bottom:8px">Terrenos encontrados · Mayor potencial</div>
+              <article class="lot sel" data-view="urbanistico" data-source="propietario">
                 <div class="thumb t1">A</div>
                 <div>
                   <b>Comas, Lima</b>
@@ -125,15 +125,15 @@
                   <div class="tags"><span class="pill ok">Potencial alto</span><span class="pill purple">Propietario</span></div>
                 </div>
               </article>
-              <article class="lot">
+              <article class="lot" data-source="brokers" data-toast="Terreno B — Los Olivos · score 78">
                 <div class="thumb t2">B</div>
                 <div><b>Los Olivos, Lima</b><span class="tiny">2,800 m² · S/ 3.08 M</span><div class="tags"><span class="pill blue">Brokers</span></div></div>
               </article>
-              <article class="lot">
+              <article class="lot" data-source="portales" data-toast="Terreno C — San Martín de Porres · score 64">
                 <div class="thumb t3">C</div>
                 <div><b>San Martín de Porres</b><span class="tiny">1,950 m² · S/ 1.95 M</span><div class="tags"><span class="pill teal">Portales</span></div></div>
               </article>
-              <article class="lot">
+              <article class="lot" data-source="interna" data-toast="Terreno D — Independencia · score 58">
                 <div class="thumb t4">D</div>
                 <div><b>Independencia</b><span class="tiny">2,400 m² · S/ 2.62 M</span><div class="tags"><span class="pill warn">Cartera interna</span></div></div>
               </article>
@@ -147,14 +147,14 @@
           <p class="sub">Muestra las de mayor potencial con ficha de viabilidad.</p>
           <div class="split">
             <div>
-              <article class="lot-row sel"><div class="thumb t1">A</div><div><b>Terreno A — Comas</b><div class="tiny">3,500 m² · S/ 3.85 M</div></div><div class="score">92</div></article>
-              <article class="lot-row"><div class="thumb t2">B</div><div><b>Terreno B — Los Olivos</b><div class="tiny">2,800 m²</div></div><div class="score">78</div></article>
-              <article class="lot-row"><div class="thumb t3">C</div><div><b>Terreno C — SMP</b><div class="tiny">1,950 m²</div></div><div class="score mid">64</div></article>
-              <article class="lot-row"><div class="thumb t4">D</div><div><b>Terreno D — Independencia</b><div class="tiny">2,400 m²</div></div><div class="score mid">58</div></article>
-              <article class="lot-row"><div class="thumb t5">E</div><div><b>Terreno E — Rímac</b><div class="tiny">1,800 m²</div></div><div class="score mid">52</div></article>
-              <article class="lot-row"><div class="thumb t6">F</div><div><b>Terreno F — La Victoria</b><div class="tiny">1,200 m² · S/ 2.40 M</div></div><div class="score low">38</div></article>
+              <article class="lot-row sel" data-lot="A"><div class="thumb t1">A</div><div><b>Terreno A — Comas</b><div class="tiny">3,500 m² · S/ 3.85 M</div></div><div class="score">92</div></article>
+              <article class="lot-row" data-lot="B"><div class="thumb t2">B</div><div><b>Terreno B — Los Olivos</b><div class="tiny">2,800 m²</div></div><div class="score">78</div></article>
+              <article class="lot-row" data-lot="C"><div class="thumb t3">C</div><div><b>Terreno C — SMP</b><div class="tiny">1,950 m²</div></div><div class="score mid">64</div></article>
+              <article class="lot-row" data-lot="D"><div class="thumb t4">D</div><div><b>Terreno D — Independencia</b><div class="tiny">2,400 m²</div></div><div class="score mid">58</div></article>
+              <article class="lot-row" data-lot="E"><div class="thumb t5">E</div><div><b>Terreno E — Rímac</b><div class="tiny">1,800 m²</div></div><div class="score mid">52</div></article>
+              <article class="lot-row" data-lot="F"><div class="thumb t6">F</div><div><b>Terreno F — La Victoria</b><div class="tiny">1,200 m² · S/ 2.40 M</div></div><div class="score low">38</div></article>
             </div>
-            <div class="card side-ficha">
+            <div class="card side-ficha" id="ficha-best">
               <span class="pill ok">Ficha de viabilidad — Mayor potencial</span>
               <h2 style="margin-top:10px">Terreno A — Comas</h2>
               <div class="score lg" style="margin:12px 0">92</div>
@@ -169,7 +169,7 @@
               </div>
               <button class="btn" style="margin-top:14px" data-view="integral">Ver ficha completa</button>
             </div>
-            <div class="card side-ficha">
+            <div class="card side-ficha" id="ficha-worst">
               <span class="pill bad">Ficha de viabilidad — Menor potencial</span>
               <h2 style="margin-top:10px">Terreno F — La Victoria</h2>
               <div class="score lg low" style="margin:12px 0">38</div>
@@ -189,7 +189,7 @@
 
         <!-- URBANISTICO -->
         <section id="urbanistico" class="view">
-          <div class="progress"><span class="on">1. Urbanístico</span><span>2. Financiera</span><span>3. Ubicación</span><span>4. Integral</span></div>
+          <div class="progress"><span class="on">1. Urbanístico</span><span data-view="financiero">2. Financiera</span><span data-view="ubicacion">3. Ubicación</span><span data-view="integral">4. Integral</span></div>
           <h1 class="h1">Análisis urbanístico</h1>
           <p class="sub">Evaluación normativa, cabida y potencial edificatorio del predio. Terreno A — Comas · 3,500 m² · Fuente: propietario.</p>
           <div class="grid" style="grid-template-columns: 1.1fr 1fr .9fr; margin-bottom:16px">
@@ -244,7 +244,7 @@
 
         <!-- UBICACION -->
         <section id="ubicacion" class="view">
-          <div class="progress"><span>1. Urbanístico</span><span>2. Financiera</span><span class="on">3. Ubicación</span><span>4. Integral</span></div>
+          <div class="progress"><span data-view="urbanistico">1. Urbanístico</span><span data-view="financiero">2. Financiera</span><span class="on">3. Ubicación</span><span data-view="integral">4. Integral</span></div>
           <h1 class="h1">Análisis de ubicación y entorno</h1>
           <p class="sub">Conectividad, equipamiento urbano y potencial de mercado alrededor del predio.</p>
           <div class="grid" style="grid-template-columns: 1.2fr .8fr 1fr">
@@ -422,7 +422,7 @@
 
         <!-- INTEGRAL -->
         <section id="integral" class="view">
-          <div class="progress"><span>1. Prefactibilidad</span><span>2. Documental</span><span>3. Servicios</span><span class="on">4. Integral</span><span>5. Decisión</span></div>
+          <div class="progress"><span data-view="urbanistico">1. Prefactibilidad</span><span data-view="validacion">2. Documental</span><span data-view="servicios">3. Servicios</span><span class="on">4. Integral</span><span data-view="integral">5. Decisión</span></div>
           <h1 class="h1">Prefactibilidad integral y decisión de inversión</h1>
           <p class="sub">Terreno A — Comas · 3,500 m² · Fuente: propietario. Confianza del análisis: 86%.</p>
           <div class="grid g3">
@@ -473,9 +473,9 @@
           </div>
           <div class="footer-cta">
             <span class="muted">Decisión final de inversión</span>
-            <button class="btn">Avanzar a negociación</button>
-            <button class="btn warn">Condicionado a revisión</button>
-            <button class="btn danger">Descartar</button>
+            <button class="btn" data-toast="Decisión registrada: avanzar a negociación 🟢" data-toast-type="">Avanzar a negociación</button>
+            <button class="btn warn" data-toast="Decisión registrada: condicionado a revisión 🟡" data-toast-type="warn">Condicionado a revisión</button>
+            <button class="btn danger" data-toast="Decisión registrada: descartar terreno 🔴" data-toast-type="danger">Descartar</button>
           </div>
         </section>
       </div>
