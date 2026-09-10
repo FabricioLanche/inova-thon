@@ -118,7 +118,7 @@
             <div class="list">
               <div class="tiny" data-lot-count style="margin-bottom:8px">Terrenos encontrados · Mayor potencial</div>
               <article class="lot sel" data-view="urbanistico" data-source="propietario">
-                <div class="thumb t1">A</div>
+                <img class="thumb" src="references/terrenos/t1.jpg" alt="Terreno en Comas" />
                 <div>
                   <b>Comas, Lima</b>
                   <span class="tiny">Av. Universitaria · 3,500 m² · S/ 3.85 M</span>
@@ -126,15 +126,15 @@
                 </div>
               </article>
               <article class="lot" data-source="brokers" data-toast="Terreno B — Los Olivos · score 78">
-                <div class="thumb t2">B</div>
+                <img class="thumb" src="references/terrenos/t2.jpg" alt="Terreno en Los Olivos" />
                 <div><b>Los Olivos, Lima</b><span class="tiny">2,800 m² · S/ 3.08 M</span><div class="tags"><span class="pill blue">Brokers</span></div></div>
               </article>
               <article class="lot" data-source="portales" data-toast="Terreno C — San Martín de Porres · score 64">
-                <div class="thumb t3">C</div>
+                <img class="thumb" src="references/terrenos/t3.jpg" alt="Terreno en San Martín de Porres" />
                 <div><b>San Martín de Porres</b><span class="tiny">1,950 m² · S/ 1.95 M</span><div class="tags"><span class="pill teal">Portales</span></div></div>
               </article>
               <article class="lot" data-source="interna" data-toast="Terreno D — Independencia · score 58">
-                <div class="thumb t4">D</div>
+                <img class="thumb" src="references/terrenos/t4.jpg" alt="Terreno en Independencia" />
                 <div><b>Independencia</b><span class="tiny">2,400 m² · S/ 2.62 M</span><div class="tags"><span class="pill warn">Cartera interna</span></div></div>
               </article>
             </div>
@@ -147,12 +147,12 @@
           <p class="sub">Muestra las de mayor potencial con ficha de viabilidad.</p>
           <div class="split">
             <div>
-              <article class="lot-row sel" data-lot="A"><div class="thumb t1">A</div><div><b>Terreno A — Comas</b><div class="tiny">3,500 m² · S/ 3.85 M</div></div><div class="score">92</div></article>
-              <article class="lot-row" data-lot="B"><div class="thumb t2">B</div><div><b>Terreno B — Los Olivos</b><div class="tiny">2,800 m²</div></div><div class="score">78</div></article>
-              <article class="lot-row" data-lot="C"><div class="thumb t3">C</div><div><b>Terreno C — SMP</b><div class="tiny">1,950 m²</div></div><div class="score mid">64</div></article>
-              <article class="lot-row" data-lot="D"><div class="thumb t4">D</div><div><b>Terreno D — Independencia</b><div class="tiny">2,400 m²</div></div><div class="score mid">58</div></article>
-              <article class="lot-row" data-lot="E"><div class="thumb t5">E</div><div><b>Terreno E — Rímac</b><div class="tiny">1,800 m²</div></div><div class="score mid">52</div></article>
-              <article class="lot-row" data-lot="F"><div class="thumb t6">F</div><div><b>Terreno F — La Victoria</b><div class="tiny">1,200 m² · S/ 2.40 M</div></div><div class="score low">38</div></article>
+              <article class="lot-row sel" data-lot="A"><img class="thumb" src="references/terrenos/t1.jpg" alt="Terreno A" /><div><b>Terreno A — Comas</b><div class="tiny">3,500 m² · S/ 3.85 M</div></div><div class="score">92</div></article>
+              <article class="lot-row" data-lot="B"><img class="thumb" src="references/terrenos/t2.jpg" alt="Terreno B" /><div><b>Terreno B — Los Olivos</b><div class="tiny">2,800 m²</div></div><div class="score">78</div></article>
+              <article class="lot-row" data-lot="C"><img class="thumb" src="references/terrenos/t3.jpg" alt="Terreno C" /><div><b>Terreno C — SMP</b><div class="tiny">1,950 m²</div></div><div class="score mid">64</div></article>
+              <article class="lot-row" data-lot="D"><img class="thumb" src="references/terrenos/t4.jpg" alt="Terreno D" /><div><b>Terreno D — Independencia</b><div class="tiny">2,400 m²</div></div><div class="score mid">58</div></article>
+              <article class="lot-row" data-lot="E"><img class="thumb" src="references/terrenos/t5.jpg" alt="Terreno E" /><div><b>Terreno E — Rímac</b><div class="tiny">1,800 m²</div></div><div class="score mid">52</div></article>
+              <article class="lot-row" data-lot="F"><img class="thumb" src="references/terrenos/t6.jpg" alt="Terreno F" /><div><b>Terreno F — La Victoria</b><div class="tiny">1,200 m² · S/ 2.40 M</div></div><div class="score low">38</div></article>
             </div>
             <div class="card side-ficha" id="ficha-best">
               <span class="pill ok">Ficha de viabilidad — Mayor potencial</span>
@@ -307,9 +307,19 @@
           </div>
           <div class="grid" style="grid-template-columns: 1.2fr .8fr">
             <div class="card doc">
-              <b>SUNARP · Partida 12345678 · Zona Registral IX Lima</b>
+              <div class="doc-head">
+                <svg class="sunarp-logo" viewBox="0 0 64 40" width="72" height="45" aria-label="SUNARP">
+                  <rect x="2" y="4" width="60" height="34" rx="6" fill="#0b4a8f" />
+                  <path d="M14 10 L32 20 L50 10 L50 14 L32 24 L14 14 Z" fill="#ffffff" />
+                  <text x="32" y="38" text-anchor="middle" font-family="Arial, sans-serif" font-weight="700" font-size="9" fill="#ffffff">SUNARP</text>
+                </svg>
+                <div>
+                  <b>SUNARP · Partida 12345678</b>
+                  <div class="tiny">Zona Registral IX Lima</div>
+                </div>
+              </div>
               <p>Titular: Juan Carlos Pérez García<br />Acto: Compraventa · 12/03/2018<br />Distrito: Comas · Lima<br />Área registral: <b>3,347.00 m²</b><br />Linderos: frente 42 m · fondo 84 m</p>
-              <span class="stamp">VERIFICADO SUNARP</span>
+              <div class="stamp-wrap"><span class="stamp">VERIFICADO SUNARP</span></div>
             </div>
             <div class="card">
               <h3>Datos del terreno</h3>
