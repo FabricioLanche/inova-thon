@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PredIA · ViableVIS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="brand">
+        <img class="logo" src="references/PredIA_logo.png" alt="PredIA" />
+      </div>
+      <nav class="nav">
+        <button data-view="dashboard" class="active"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></span> Dashboard</button>
+        <button data-view="captacion"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="1"/></svg></span> Captación de Oportunidades</button>
+        <button data-view="comparar"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18"/><path d="M5 7l7-4 7 4"/><path d="M8 20h8"/><path d="M7 12l5-3 5 3"/></svg></span> Comparar oportunidades</button>
+        <button data-view="urbanistico"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l7-4v18"/><path d="M12 21V10l7 4v7"/></svg></span> Análisis urbanístico</button>
+        <button data-view="ubicacion"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-5.5-7-11a7 7 0 1 1 14 0c0 5.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span> Ubicación y entorno</button>
+        <button data-view="validacion"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg></span> Validación documental</button>
+        <button data-view="servicios"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4 14h6l-1 8 9-12h-6l1-8z"/></svg></span> Factibilidad de servicios</button>
+        <button data-view="financiero"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12V7H3v10h12"/><path d="M18 9a3 3 0 0 1 0 6"/><circle cx="18" cy="12" r="1.5"/></svg></span> Análisis financiero</button>
+        <button data-view="integral"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.6 5.6 6.1.7-4.6 4.1 1.2 6-5.3-3-5.3 3 1.2-6L3.3 8.3l6.1-.7L12 2z"/></svg></span> Prefactibilidad integral</button>
+      </nav>
+      <div class="spacer"></div>
+      <div class="help">
+        <p>¿Necesitas ayuda? Nuestro equipo te apoya.</p>
+        <button class="btn">Contactar</button>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div class="product">
+          <b>ViableVIS</b>
+          <em id="subtitle">Analítica de predios y viabilidad de proyectos</em>
+        </div>
+        <div class="search">Buscar terrenos, distritos, propietarios…</div>
+        <div class="user">
+          <div class="avatar">JP</div>
+          <div>
+            <b>Juan Pérez</b><br />
+            <span class="tiny">Empresa XYZ</span>
+          </div>
+        </div>
+      </header>
+
+      <div class="content">
+        <!-- DASHBOARD -->
+        <section id="dashboard" class="view active">
+          <h1 class="h1">Pipeline de prefactibilidad</h1>
+          <p class="sub">Un solo caso de demo: Terreno A — Comas, vivienda social.</p>
+          <div class="grid g4">
+            <div class="card kpi"><div><div class="tiny">Oportunidades</div><div class="num">128</div></div></div>
+            <div class="card kpi"><div><div class="tiny">En Comas</div><div class="num">37</div></div></div>
+            <div class="card kpi"><div><div class="tiny">Alto potencial</div><div class="num">12</div></div></div>
+            <div class="card kpi"><div><div class="tiny">Recomendado</div><div class="num">1</div></div></div>
+          </div>
+          <div class="card" style="margin-top:16px">
+            <h3>Terreno A — Comas · 87/100</h3>
+            <p class="muted">3,500 m² · S/ 3.85 M · Fuente: propietario · Cabida 231–247 deptos · Margen preliminar 15.8%</p>
+            <div class="actions">
+              <button class="btn" data-view="captacion">Ver captación</button>
+              <button class="btn ghost" data-view="integral">Abrir ficha integral</button>
+            </div>
+          </div>
+        </section>
+
+        <!-- CAPTACION -->
+        <section id="captacion" class="view">
+          <div class="view-head">
+            <div>
+              <h1 class="h1">Búsqueda unificada de terrenos</h1>
+              <p class="sub">Explora oportunidades de propietarios, brokers, portales y cartera interna en un solo lugar.</p>
+            </div>
+            <div class="actions">
+              <button class="btn ghost">Importar oportunidades</button>
+              <button class="btn">Agregar terreno +</button>
+              <button class="btn ghost" data-view="comparar">Ver candidatos</button>
+            </div>
+          </div>
+          <div class="sources">
+            <div class="card source purple"><div class="n">48</div>Propietarios</div>
+            <div class="card source blue"><div class="n">32</div>Brokers</div>
+            <div class="card source green"><div class="n">78</div>Portales inmobiliarios</div>
+            <div class="card source gold"><div class="n">26</div>Cartera interna</div>
+          </div>
+          <div class="stats-line">
+            <span><b>128</b> oportunidades totales</span>
+            <span><b>37</b> en Comas</span>
+            <span><b>12</b> con alto potencial</span>
+            <span class="pill teal">PredIA · todo en un mismo lugar</span>
+          </div>
+          <div class="row">
+            <aside class="card filters">
+              <h3>Filtros de búsqueda</h3>
+              <div class="field"><label>Distrito</label><select><option>Comas</option><option>Todos</option></select></div>
+              <div class="field"><label>Área mínima (m²)</label><input value="2000" /></div>
+              <div class="field"><label>Producto</label><select><option>Vivienda social</option></select></div>
+              <div class="field"><label>Rango de precio (S/)</label><input placeholder="Mínimo" /><input placeholder="Máximo" style="margin-top:6px" /></div>
+              <div class="tiny">Fuente de oportunidad</div>
+              <label class="check"><input type="checkbox" checked /> Propietarios</label>
+              <label class="check"><input type="checkbox" checked /> Brokers</label>
+              <label class="check"><input type="checkbox" checked /> Portales</label>
+              <label class="check"><input type="checkbox" checked /> Cartera interna</label>
+              <button class="btn" style="width:100%;margin-top:10px">Buscar terrenos</button>
+            </aside>
+            <div class="map">
+              <div class="map-label" style="top:18%;left:42%">Comas</div>
+              <div class="map-pin g" style="top:20%;left:48%"></div>
+              <div class="map-pin b" style="top:32%;left:46%"></div>
+              <div class="map-pin p" style="top:40%;left:52%"></div>
+              <div class="map-pin g" style="top:28%;left:55%"></div>
+            </div>
+            <div class="list">
+              <div class="tiny" style="margin-bottom:8px">Terrenos encontrados (128) · Mayor potencial</div>
+              <article class="lot sel" data-view="urbanistico">
+                <div class="thumb t1">A</div>
+                <div>
+                  <b>Comas, Lima</b>
+                  <span class="tiny">Av. Universitaria · 3,500 m² · S/ 3.85 M</span>
+                  <div class="tags"><span class="pill ok">Potencial alto</span><span class="pill purple">Propietario</span></div>
+                </div>
+              </article>
+              <article class="lot">
+                <div class="thumb t2">B</div>
+                <div><b>Los Olivos, Lima</b><span class="tiny">2,800 m² · S/ 3.08 M</span><div class="tags"><span class="pill blue">Brokers</span></div></div>
+              </article>
+              <article class="lot">
+                <div class="thumb t3">C</div>
+                <div><b>San Martín de Porres</b><span class="tiny">1,950 m² · S/ 1.95 M</span><div class="tags"><span class="pill teal">Portales</span></div></div>
+              </article>
+              <article class="lot">
+                <div class="thumb t4">D</div>
+                <div><b>Independencia</b><span class="tiny">2,400 m² · S/ 2.62 M</span><div class="tags"><span class="pill warn">Cartera interna</span></div></div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <!-- COMPARAR -->
+        <section id="comparar" class="view">
+          <h1 class="h1">Compara oportunidades</h1>
+          <p class="sub">Muestra las de mayor potencial con ficha de viabilidad.</p>
+          <div class="split">
+            <div>
+              <article class="lot-row sel"><div class="thumb t1">A</div><div><b>Terreno A — Comas</b><div class="tiny">3,500 m² · S/ 3.85 M</div></div><div class="score">92</div></article>
+              <article class="lot-row"><div class="thumb t2">B</div><div><b>Terreno B — Los Olivos</b><div class="tiny">2,800 m²</div></div><div class="score">78</div></article>
+              <article class="lot-row"><div class="thumb t3">C</div><div><b>Terreno C — SMP</b><div class="tiny">1,950 m²</div></div><div class="score mid">64</div></article>
+              <article class="lot-row"><div class="thumb t4">D</div><div><b>Terreno D — Independencia</b><div class="tiny">2,400 m²</div></div><div class="score mid">58</div></article>
+              <article class="lot-row"><div class="thumb t5">E</div><div><b>Terreno E — Rímac</b><div class="tiny">1,800 m²</div></div><div class="score mid">52</div></article>
+              <article class="lot-row"><div class="thumb t6">F</div><div><b>Terreno F — La Victoria</b><div class="tiny">1,200 m² · S/ 2.40 M</div></div><div class="score low">38</div></article>
+            </div>
+            <div class="card side-ficha">
+              <span class="pill ok">Ficha de viabilidad — Mayor potencial</span>
+              <h2 style="margin-top:10px">Terreno A — Comas</h2>
+              <div class="score lg" style="margin:12px 0">92</div>
+              <p class="pill ok">Avanzar a negociación</p>
+              <div class="metrics" style="margin-top:12px">
+                <div class="metric">Potencial edificatorio<b>8 pisos</b></div>
+                <div class="metric">Cabida estimada<b>231–247 deptos</b></div>
+                <div class="metric">Área vendible<b>14,800 m²</b></div>
+                <div class="metric">Rentabilidad bruta<b>22%</b></div>
+                <div class="metric">Valor de suelo<b>S/ 1,100 / m²</b></div>
+                <div class="metric">Riesgo registral<b>Bajo</b></div>
+              </div>
+              <button class="btn" style="margin-top:14px" data-view="integral">Ver ficha completa</button>
+            </div>
+            <div class="card side-ficha">
+              <span class="pill bad">Ficha de viabilidad — Menor potencial</span>
+              <h2 style="margin-top:10px">Terreno F — La Victoria</h2>
+              <div class="score lg low" style="margin:12px 0">38</div>
+              <p class="pill bad">No recomendable</p>
+              <div class="metrics" style="margin-top:12px">
+                <div class="metric">Potencial edificatorio<b>5 pisos</b></div>
+                <div class="metric">Cabida estimada<b>48–62 deptos</b></div>
+                <div class="metric">Área vendible<b>4,800 m²</b></div>
+                <div class="metric">Rentabilidad bruta<b>6%</b></div>
+                <div class="metric">Valor de suelo<b>S/ 2,000 / m²</b></div>
+                <div class="metric">Uso<b>Con restricciones</b></div>
+              </div>
+              <p class="tiny" style="margin-top:12px">No vale la pena iniciar SUNARP ni factibilidad de servicios con este score.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- URBANISTICO -->
+        <section id="urbanistico" class="view">
+          <div class="progress"><span class="on">1. Urbanístico</span><span>2. Financiera</span><span>3. Ubicación</span><span>4. Integral</span></div>
+          <h1 class="h1">Análisis urbanístico</h1>
+          <p class="sub">Evaluación normativa, cabida y potencial edificatorio del predio. Terreno A — Comas · 3,500 m² · Fuente: propietario.</p>
+          <div class="grid" style="grid-template-columns: 1.1fr 1fr .9fr; margin-bottom:16px">
+            <div class="card">
+              <h3>Parámetros urbanísticos</h3>
+              <div class="param">Zonificación <b>RDM <span class="pill ok">Declarado</span></b></div>
+              <div class="param">Altura permitida <b>8 pisos</b></div>
+              <div class="param">Área libre mínima <b>30%</b></div>
+              <div class="param">Densidad <b>Media</b></div>
+              <div class="param">Retiros <b>F 3m · L 0m · P 3m</b></div>
+              <div class="param">Estacionamientos <b>1 cada 3 viviendas <span class="pill warn">Pendiente</span></b></div>
+              <div class="param">Compatibilidad de uso <b>Vivienda multifamiliar</b></div>
+            </div>
+            <div class="card">
+              <h3>Cabida estimada</h3>
+              <div class="iso">🏢</div>
+              <div class="param">Área construible <b>18,700 m²</b></div>
+              <div class="param">Área vendible aprox. <b>14,800 m²</b></div>
+              <div class="param">Cabida preliminar <b>231–247 departamentos</b></div>
+              <div class="param">Mix sugerido <b>2 y 3 dormitorios · 45–60 m²</b></div>
+              <p class="tiny">Estimación referencial con parámetros declarados · no verificados.</p>
+            </div>
+            <div class="card">
+              <div class="score lg">88</div>
+              <p class="pill ok">Viable para continuar evaluación</p>
+              <p class="tiny">Buena capacidad edificatoria. Geometría favorable. Compatible con vivienda social.</p>
+              <button class="btn" style="margin-top:12px" data-view="financiero">Continuar a financiera</button>
+            </div>
+          </div>
+          <div class="grid g3">
+            <div class="card">
+              <h3>Geometría del predio</h3>
+              <div class="geom"><div class="rect"><span style="top:-18px;left:28px">42 m</span><span style="left:-28px;top:50px">84 m</span></div></div>
+              <div class="param">Forma <b>Rectangular · alta regularidad</b></div>
+              <div class="param">Esquina <b>No</b></div>
+              <p class="pill warn">Geometría no verificada · validar con levantamiento</p>
+            </div>
+            <div class="card">
+              <h3>Normativa y alertas</h3>
+              <p class="pill warn">Posible incompatibilidad en tamaño mínimo de unidad. Requiere validación documental.</p>
+              <p class="pill warn" style="margin-top:8px">Parámetros preliminares basados en información declarada.</p>
+            </div>
+            <div class="card">
+              <h3>Resumen de indicadores</h3>
+              <div class="param">Potencial edificatorio <b>88/100</b></div>
+              <div class="param">Normativa <b>81/100</b></div>
+              <div class="param">Geometría <b>90/100</b></div>
+              <div class="param">Compatibilidad <b>86/100</b></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- UBICACION -->
+        <section id="ubicacion" class="view">
+          <div class="progress"><span>1. Urbanístico</span><span>2. Financiera</span><span class="on">3. Ubicación</span><span>4. Integral</span></div>
+          <h1 class="h1">Análisis de ubicación y entorno</h1>
+          <p class="sub">Conectividad, equipamiento urbano y potencial de mercado alrededor del predio.</p>
+          <div class="grid" style="grid-template-columns: 1.2fr .8fr 1fr">
+            <div class="card">
+              <h3>Mapa del entorno</h3>
+              <div class="map" style="min-height:280px">
+                <div class="map-label" style="top:40%;left:44%">Terreno A</div>
+                <div class="map-pin g" style="top:42%;left:50%"></div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="score lg">91</div>
+              <p class="pill ok">Ubicación recomendada</p>
+              <p class="tiny">Excelente conectividad, entorno consolidado y demanda compatible.</p>
+            </div>
+            <div class="card">
+              <h3>Potencial de negocios cercano</h3>
+              <div class="param">Supermercados <b>8 en 1 km</b></div>
+              <div class="param">Salud <b>6 en 1 km</b></div>
+              <div class="param">Bancos <b>3 en 1 km</b></div>
+              <div class="param">Restaurantes <b>12 en 1 km</b></div>
+              <div class="param">Comercio barrial <b>20+ en 1 km</b></div>
+            </div>
+          </div>
+          <div class="grid g3" style="margin-top:16px">
+            <div class="card">
+              <h3>Equipamiento urbano</h3>
+              <div class="param">Colegios <b>12 en 2 km · Excelente</b></div>
+              <div class="param">Universidades <b>3 en 5 km · Bueno</b></div>
+              <div class="param">Hospitales <b>4 en 3 km · Bueno</b></div>
+              <div class="param">Parques <b>15 en 2 km · Excelente</b></div>
+            </div>
+            <div class="card">
+              <h3>Movilidad y accesos</h3>
+              <div class="param">Av. Túpac Amaru <b>A 350 m</b></div>
+              <div class="param">Av. Universitaria <b>A 1.2 km</b></div>
+              <div class="param">Paraderos cercanos <b>3 a 400 m</b></div>
+              <div class="param">Tiempo al Metropolitano <b>12 min</b></div>
+            </div>
+            <div class="card">
+              <h3>Mercado y competencia</h3>
+              <div class="param">Precio ofertado <b>S/ 5,200 – 5,800 / m²</b></div>
+              <div class="param">Proyectos cercanos <b>6 · Moderado</b></div>
+              <div class="param">Demanda estimada <b>Alta</b></div>
+              <div class="param">Producto compatible <b>2 y 3 dormitorios</b></div>
+              <button class="btn" style="margin-top:12px" data-view="integral">Continuar a integral</button>
+            </div>
+          </div>
+        </section>
+
+        <!-- VALIDACION -->
+        <section id="validacion" class="view">
+          <h1 class="h1">Estudio de título preliminar</h1>
+          <p class="sub">Revisión registral y legal del inmueble para validar situación jurídica, cargas y restricciones.</p>
+          <div class="grid g4" style="margin-bottom:16px">
+            <div class="card"><span class="pill ok">Propietario verificado</span><p class="tiny">Coincide con SUNARP</p></div>
+            <div class="card"><span class="pill ok">Cargas</span><p class="tiny">No se encontraron</p></div>
+            <div class="card"><span class="pill ok">Hipotecas / gravámenes</span><p class="tiny">No se encontraron</p></div>
+            <div class="card"><span class="pill warn">Diferencia de área 153 m²</span><p class="tiny">Registral menor a lo declarado</p></div>
+          </div>
+          <div class="grid" style="grid-template-columns: 1.2fr .8fr">
+            <div class="card doc">
+              <b>SUNARP · Partida 12345678 · Zona Registral IX Lima</b>
+              <p>Titular: Juan Carlos Pérez García<br />Acto: Compraventa · 12/03/2018<br />Distrito: Comas · Lima<br />Área registral: <b>3,347.00 m²</b><br />Linderos: frente 42 m · fondo 84 m</p>
+              <span class="stamp">VERIFICADO SUNARP</span>
+            </div>
+            <div class="card">
+              <h3>Datos del terreno</h3>
+              <div class="geom"><div class="rect"></div></div>
+              <div class="param">Área declarada <b>3,500 m²</b></div>
+              <div class="param">Área registral <b>3,347 m²</b></div>
+              <div class="param">Diferencia <b>153 m²</b></div>
+              <p class="tiny">La cabida se actualiza con el área verificada. Confianza del análisis: media-alta.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- SERVICIOS -->
+        <section id="servicios" class="view">
+          <h1 class="h1">Factibilidad de servicios e infraestructura</h1>
+          <p class="sub">Estima costos preliminares de habilitación urbana e intégralos al modelo financiero.</p>
+          <div class="grid g3">
+            <div class="card">
+              <h3>Estado de servicios básicos</h3>
+              <div class="param">Agua <b>Disponible · 280 m</b></div>
+              <div class="param">Desagüe <b>En evaluación · 420 m</b></div>
+              <div class="param">Electricidad <b>Disponible · 350 m</b></div>
+            </div>
+            <div class="card">
+              <h3>Mapa de infraestructura</h3>
+              <div class="map" style="min-height:220px"></div>
+            </div>
+            <div class="card">
+              <h3>Calculadora de habilitación</h3>
+              <p class="num" style="font-size:22px;font-weight:800">S/ 4.8 – 5.6 M</p>
+              <p class="tiny">Costo preliminar de habilitación</p>
+              <div class="param">Red adicional desagüe <b>Sí (red secundaria)</b></div>
+              <span class="pill ok">Viable para continuar</span>
+            </div>
+          </div>
+          <div class="grid g2" style="margin-top:16px">
+            <div class="card">
+              <h3>Costos de habilitación urbana (preliminar)</h3>
+              <div class="param">Red de agua potable <b>S/ 1,200,000</b></div>
+              <div class="param">Red de desagüe <b>S/ 1,450,000</b></div>
+              <div class="param">Red eléctrica <b>S/ 980,000</b></div>
+              <div class="param">Pavimentación interna <b>S/ 750,000</b></div>
+              <div class="param">Otros <b>S/ 420,000</b></div>
+              <div class="param"><b>Total estimado</b> <b>S/ 4.8 – 5.6 M</b></div>
+            </div>
+            <div class="card">
+              <h3>Impacto en el modelo financiero</h3>
+              <div class="param">Escenario conservador <b>S/ 5.6 M</b></div>
+              <div class="param">Escenario base <b>S/ 5.1 M</b></div>
+              <div class="param">Escenario optimista <b>S/ 4.8 M</b></div>
+              <button class="btn" style="margin-top:16px" data-view="integral">Continuar a prefactibilidad integral</button>
+            </div>
+          </div>
+        </section>
+
+        <!-- FINANCIERO -->
+        <section id="financiero" class="view">
+          <h1 class="h1">Dashboard de inversión</h1>
+          <p class="sub">Evalúa rentabilidad, riesgos y proyección de Terreno A con un solo set de cifras.</p>
+          <div class="grid g3">
+            <div class="card kpi"><div><div class="tiny">Inversión total</div><div class="num">S/ 48,000,000</div><span class="pill gray">CAPEX + gastos de desarrollo</span></div></div>
+            <div class="card kpi"><div><div class="tiny">Ingresos proyectados</div><div class="num">S/ 57,000,000</div><span class="pill ok">+18.8% vs. inversión</span></div></div>
+            <div class="card kpi"><div><div class="tiny">Margen estimado</div><div class="num">15.8%</div><span class="pill ok">Proyecto viable</span></div></div>
+          </div>
+          <div class="grid g2" style="margin-top:16px">
+            <div class="card">
+              <h3>Comparativo de escenarios · ingresos netos</h3>
+              <div class="bars">
+                <div class="bar-col"><div class="bar g" style="height:40%"></div><div class="bar b" style="height:32%"></div><div class="bar o" style="height:24%"></div></div>
+                <div class="bar-col"><div class="bar g" style="height:55%"></div><div class="bar b" style="height:46%"></div><div class="bar o" style="height:36%"></div></div>
+                <div class="bar-col"><div class="bar g" style="height:70%"></div><div class="bar b" style="height:58%"></div><div class="bar o" style="height:46%"></div></div>
+                <div class="bar-col"><div class="bar g" style="height:86%"></div><div class="bar b" style="height:72%"></div><div class="bar o" style="height:58%"></div></div>
+                <div class="bar-col"><div class="bar g" style="height:100%"></div><div class="bar b" style="height:82%"></div><div class="bar o" style="height:66%"></div></div>
+              </div>
+              <p class="tiny">Año 1 a 5 · Optimista / Base / Conservador</p>
+            </div>
+            <div class="card">
+              <h3>Resumen de inversión</h3>
+              <div class="param">Terreno y habilitación <b>S/ 22.0 M · 45.8%</b></div>
+              <div class="param">Construcción <b>S/ 18.5 M · 38.5%</b></div>
+              <div class="param">Gastos y permisos <b>S/ 4.0 M · 8.3%</b></div>
+              <div class="param">Reserva y contingencia <b>S/ 3.5 M · 7.3%</b></div>
+              <div class="param">Total <b>S/ 48.0 M</b></div>
+            </div>
+          </div>
+          <div class="grid g2" style="margin-top:16px">
+            <div class="card">
+              <h3>Proyección de flujo de caja</h3>
+              <div class="linechart">
+                <svg viewBox="0 0 400 180" preserveAspectRatio="none">
+                  <polyline fill="none" stroke="#34d399" stroke-width="3" points="0,150 80,120 160,90 240,55 320,30 400,12" />
+                  <polyline fill="none" stroke="#38bdf8" stroke-width="3" points="0,150 80,128 160,105 240,78 320,52 400,38" />
+                  <polyline fill="none" stroke="#fb923c" stroke-width="3" points="0,150 80,136 160,118 240,98 320,78 400,62" />
+                </svg>
+              </div>
+              <p class="tiny">Payback estimado: año 3</p>
+            </div>
+            <div class="card">
+              <h3>Indicadores clave</h3>
+              <div class="param">TIR <b>18.7% · &gt; 12%</b></div>
+              <div class="param">VAN <b>S/ 12.4 M</b></div>
+              <div class="param">Periodo de recuperación <b>3.2 años</b></div>
+              <div class="param">Relación B/C <b>1.42</b></div>
+              <div class="param">Precio solicitado del terreno <b>S/ 3.85 M</b></div>
+              <div class="param">Precio máximo recomendado <b>S/ 4.40 M</b></div>
+              <p class="pill ok">Análisis favorable</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- INTEGRAL -->
+        <section id="integral" class="view">
+          <div class="progress"><span>1. Prefactibilidad</span><span>2. Documental</span><span>3. Servicios</span><span class="on">4. Integral</span><span>5. Decisión</span></div>
+          <h1 class="h1">Prefactibilidad integral y decisión de inversión</h1>
+          <p class="sub">Terreno A — Comas · 3,500 m² · Fuente: propietario. Confianza del análisis: 86%.</p>
+          <div class="grid g3">
+            <div class="card">
+              <h3>1. Resumen ejecutivo</h3>
+              <div class="score lg">87</div>
+              <p class="pill ok">Avanzar a negociación</p>
+              <p class="tiny">Alto potencial para desarrollo de vivienda social. Validar servidumbre y precio de adquisición.</p>
+            </div>
+            <div class="card">
+              <h3>2. Definición de producto</h3>
+              <div class="param">Área promedio <b>50–60 m²</b></div>
+              <div class="param">Dormitorios <b>2–3</b></div>
+              <div class="param">Mix sugerido <b>65% 2D / 35% 3D</b></div>
+              <div class="param">Ticket objetivo <b>S/ 320,000 – 420,000</b></div>
+              <p class="tiny">Áreas comunes: SUM y juegos infantiles</p>
+            </div>
+            <div class="card">
+              <h3>3. Cifra financiera verificada</h3>
+              <div class="param">Inversión total <b>S/ 48.0 M</b></div>
+              <div class="param">Ingresos proyectados <b>S/ 57.0 M</b></div>
+              <div class="param">Utilidad preliminar <b>S/ 9.0 M</b></div>
+              <div class="param">Margen sobre ventas <b>15.8%</b></div>
+              <div class="param">Precio máximo del terreno <b>S/ 4.4 M</b></div>
+            </div>
+          </div>
+          <div class="grid g3" style="margin-top:16px">
+            <div class="card">
+              <h3>4. Balance de evaluación</h3>
+              <p><span class="pill ok">Fortalezas</span></p>
+              <p class="tiny">Alta conectividad · servicios cercanos · geometría favorable · buena cabida · demanda compatible</p>
+              <p><span class="pill bad">Riesgos</span></p>
+              <p class="tiny">Precio de suelo elevado · competencia moderada-alta · diferencia de área 153 m² · costo extra de desagüe</p>
+            </div>
+            <div class="card">
+              <h3>5. Vista del terreno y entorno</h3>
+              <div class="map" style="min-height:180px"></div>
+              <div class="param">Cabida actualizada <b>238–247 deptos · documentada</b></div>
+            </div>
+            <div class="card">
+              <h3>6. Documentación</h3>
+              <div class="param">SUNARP / CRI / Partida <b class="pill ok">Validado</b></div>
+              <div class="param">Parámetros urbanísticos <b class="pill ok">Validado</b></div>
+              <div class="param">Planos perimétricos <b class="pill ok">Validado</b></div>
+              <div class="param">Memoria descriptiva <b class="pill ok">Validado</b></div>
+              <div class="param">Otros <b class="pill warn">Pendiente</b></div>
+            </div>
+          </div>
+          <div class="footer-cta">
+            <span class="muted">Decisión final de inversión</span>
+            <button class="btn">Avanzar a negociación</button>
+            <button class="btn warn">Condicionado a revisión</button>
+            <button class="btn danger">Descartar</button>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
